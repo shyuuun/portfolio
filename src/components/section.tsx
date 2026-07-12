@@ -1,18 +1,22 @@
 type SectionProps = {
 	children: React.ReactNode;
+	className?: string;
 	sectionTitle?: string;
 	sectionNumber?: number;
 };
 
 export default function Section({
 	children,
+	className,
 	sectionTitle,
 	sectionNumber,
 }: SectionProps) {
 	return (
-		<section className="container mt-4 relative">
+		<section
+			className={`${className ?? ""} container mt-12 sm:mt-16 relative `}
+		>
 			{/* title will be display on the left side */}
-			<div className="hidden sm:block absolute top-0 -left-12">
+			<div className="hidden sm:block absolute top-0 -left-16">
 				{sectionNumber && (
 					<p className="text-primary text-md">0{sectionNumber}</p>
 				)}

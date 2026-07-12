@@ -5,9 +5,8 @@ export default function AboutMeSection() {
 	return (
 		<Section>
 			<div className="flex mb-4">
-				image here
 				<div>
-					<h1>Frederick Vigilia</h1>
+					<h1 className="text-2xl font-bold">Frederick Vigilia</h1>
 					<p>Software Developer | Hobbyist</p>
 				</div>
 			</div>

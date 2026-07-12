@@ -3,7 +3,8 @@
 :root {
 	--background: #faf5ed;
 	--foreground: #2d2d2d;
-	--primary: #f9af7d;
+	--primary: #db6618;
+	--primary-light: #f4b890;
 }
 
 @theme inline {
@@ -34,4 +35,9 @@ body {
 
 a {
 	text-decoration: underline 4px var(--primary);
+}
+
+.btn-primary:hover {
+	background-color: var(--primary-light);
+	transition: background-color 0.2s;
 }
