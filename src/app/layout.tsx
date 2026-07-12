@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Gamja_Flower } from "next/font/google";
+import { Reddit_Mono } from "next/font/google";
 import "./globals.css";
 
-const gamjaFlower = Gamja_Flower({
-	variable: "--font-gamja-flower",
-	weight: "400",
+const redditMono = Reddit_Mono({
+	variable: "--font-reddit-mono",
+	weight: "500",
 });
 
 export const metadata: Metadata = {
@@ -18,10 +18,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html
-			lang="en"
-			className={`${gamjaFlower.variable} h-full antialiased`}
-		>
+		<html lang="en" className={`${redditMono.variable} h-full antialiased`}>
 			<body>{children}</body>
 		</html>
 	);
