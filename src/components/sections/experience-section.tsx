@@ -21,7 +21,7 @@ const JOBS: Job[] = [
 	},
 	{
 		role: "Freelance Developer",
-		date: "Nov 2021 — Present",
+		date: "Nov 2023 — Present",
 		description: [
 			"I work web, mobile applications",
 			"Plan, designs, and maintain systems based on the client's requirements",
@@ -42,11 +42,11 @@ const JOBS: Job[] = [
 	{
 		role: "IT Intern",
 		company: "Adventus",
-		date: "2019 — 2021",
+		date: "Jun 2023 - Oct 2023",
 		description: [
-			"Learned on how to setup servers, and collab ",
+			"Learned on how to setup servers, and collab with other developer to build / debug / maintain their systems",
 		],
-		tech: ["JavaScript", "HTML", "CSS", "Figma", "Liquid"],
+		tech: ["JavaScript", "HTML", "CSS", "C#", "MySQL"],
 	},
 ];
 
