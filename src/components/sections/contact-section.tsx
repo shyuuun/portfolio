@@ -41,9 +41,8 @@ export default function ContactSection({ id }: { id?: string }) {
 					</motion.p>
 
 					{LINKS.map((link) => (
-						<div className="mt-4">
+						<div key={link.label} className="mt-4">
 							<motion.a
-								key={link.label}
 								href={link.href}
 								target="_blank"
 								rel="noopener noreferrer"

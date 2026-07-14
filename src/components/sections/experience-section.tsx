@@ -16,15 +16,20 @@ const JOBS: Job[] = [
 		role: "Junior Software Developer",
 		company: "Withcenter Inc. Korea",
 		date: "Feb 2025 - Apr 2026",
-		description: ["Developed a PHILGO mobile app", "", ""],
-		tech: ["React", "NextJS", "Flutter", "Firebase", "PHP", "Vue.js"],
+		description: [
+			"Collaborated with other developers to build PHILGO website using PHP and Vue.js, and Philgo App using Flutter",
+			"Integrated AI chatbot with guardrails to the Philgo app and connected the PHP API backend",
+			"Set up deep links and Firebase push notifications (FCM)",
+			"Deployed the PHILGO app to Play Store — reached 100k+ downloads",
+		],
+		tech: ["Flutter", "PHP", "Firebase", "React", "NextJS", "Vue.js"],
 	},
 	{
 		role: "Freelance Developer",
 		date: "Nov 2023 — Present",
 		description: [
-			"I work web, mobile applications",
-			"Plan, designs, and maintain systems based on the client's requirements",
+			"Build web and mobile applications from concept to launch",
+			"Plan, design, and maintain systems based on client requirements",
 			"Work closely with clients to gather requirements, define project scope, and propose technical solutions",
 		],
 		tech: [

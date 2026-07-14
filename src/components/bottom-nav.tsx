@@ -23,15 +23,26 @@ export default function BottomNav() {
 	useEffect(() => {
 		const sectionIds = NAV_ITEMS.map((item) => item.id);
 
+		// NOTE: For illustration purposes to visualize the observer
+		// const top = document.createElement("div");
+		// const bottom = document.createElement("div");
+		// const baseStyle =
+		// 	"position:fixed;left:0;right:0;z-index:9999;pointer-events:none;opacity:0.3;";
+		// top.style.cssText = baseStyle + "top:0;height:10%;background:red;";
+		// bottom.style.cssText =
+		// 	baseStyle + "bottom:0;height:50%;background:blue;";
+		// document.body.append(top, bottom);
+
 		const observer = new IntersectionObserver(
 			(entries) => {
 				for (const entry of entries) {
 					if (entry.isIntersecting) {
 						setActive(entry.target.id);
+						console.log(`LOGGED: ${entry.target.id}`);
 					}
 				}
 			},
-			{ rootMargin: "-35% 0px -35% 0px" },
+			{ rootMargin: "-10% 0px -50% 0px", threshold: 0.3 },
 		);
 
 		for (const id of sectionIds) {
@@ -39,7 +50,11 @@ export default function BottomNav() {
 			if (el) observer.observe(el);
 		}
 
-		return () => observer.disconnect();
+		return () => {
+			observer.disconnect();
+			// top.remove();
+			// bottom.remove();
+		};
 	}, []);
 
 	return (
@@ -54,7 +69,6 @@ export default function BottomNav() {
 							key={item.id}
 							href={`#${item.id}`}
 							aria-label={item.label}
-							onClick={() => setActive(item.id)}
 							className={`rounded-xl p-2.5 transition-colors ${
 								isActive
 									? "bg-primary text-white"

@@ -5,7 +5,6 @@ export default function ProjectsPage({
 		return (
 			<main>
 				{children}
-				Project Page
 			</main>
 		);
 	}
