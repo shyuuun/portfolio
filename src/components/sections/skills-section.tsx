@@ -42,9 +42,9 @@ const SKILLS: SkillCategory[] = [
 	},
 ];
 
-export default function SkillsSection() {
+export default function SkillsSection({ id }: { id?: string }) {
 	return (
-		<Section sectionTitle="skills" sectionNumber={1}>
+		<Section id={id} sectionTitle="skills" sectionNumber={1}>
 			<motion.div
 				initial="hidden"
 				whileInView="visible"

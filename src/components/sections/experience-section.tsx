@@ -50,9 +50,9 @@ const JOBS: Job[] = [
 	},
 ];
 
-export default function ExperienceSection() {
+export default function ExperienceSection({ id }: { id?: string }) {
 	return (
-		<Section sectionNumber={3} sectionTitle="Experience">
+		<Section id={id} sectionNumber={3} sectionTitle="Experience">
 			<motion.div
 				initial="hidden"
 				whileInView="visible"

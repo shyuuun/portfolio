@@ -3,9 +3,9 @@ import Button from "../button";
 import Card from "../card";
 import Section from "../section";
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ id }: { id?: string }) {
 	return (
-		<Section sectionNumber={2} sectionTitle="Projects">
+		<Section id={id} sectionNumber={2} sectionTitle="Projects">
 			<div className="grid grid-cols-2 gap-4 mb-4">
 				<Card
 					src="/hoppura.jpg"

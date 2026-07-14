@@ -3,6 +3,7 @@ type SectionProps = {
 	className?: string;
 	sectionTitle?: string;
 	sectionNumber?: number;
+	id?: string;
 };
 
 export default function Section({
@@ -10,10 +11,12 @@ export default function Section({
 	className,
 	sectionTitle,
 	sectionNumber,
+	id,
 }: SectionProps) {
 	return (
 		<section
-			className={`${className ?? ""} container mt-12 sm:mt-16 relative `}
+			id={id}
+			className={`${className ?? ""} container mt-12 sm:mt-16 relative scroll-mt-24`}
 		>
 			{/* title will be display on the left side */}
 			<div className="hidden sm:block absolute top-0 -left-16">

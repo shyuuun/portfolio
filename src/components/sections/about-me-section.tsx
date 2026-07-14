@@ -2,9 +2,9 @@ import Avatar from "@/components/avatar";
 import Section from "@/components/section";
 import { LOST_IN_BYTES_SITE } from "@/constants";
 
-export default function AboutMeSection() {
+export default function AboutMeSection({ id }: { id?: string }) {
 	return (
-		<Section>
+		<Section id={id}>
 			<div className="flex items-center gap-4 mb-4">
 				<Avatar src="/me.jpg" srcAlt="Frederick Vigilia" size={128} />
 				<div>

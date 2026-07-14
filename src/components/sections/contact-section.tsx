@@ -15,10 +15,10 @@ const LINKS: ContactLink[] = [
 	{ label: "linkedin", href: LINKED_IN_PROFILE },
 ];
 
-export default function ContactSection() {
+export default function ContactSection({ id }: { id?: string }) {
 	return (
 		<div className="pb-8">
-			<Section sectionNumber={4} sectionTitle="Contact">
+			<Section id={id} sectionNumber={4} sectionTitle="Contact">
 				<motion.div
 					initial="hidden"
 					whileInView="visible"
@@ -40,8 +40,8 @@ export default function ContactSection() {
 						}
 					</motion.p>
 
-					<div className="mt-4 space-y-2">
-						{LINKS.map((link) => (
+					{LINKS.map((link) => (
+						<div className="mt-4">
 							<motion.a
 								key={link.label}
 								href={link.href}
@@ -51,12 +51,12 @@ export default function ContactSection() {
 									hidden: { opacity: 0, y: 12 },
 									visible: { opacity: 1, y: 0 },
 								}}
-								className="flex text-primary hover:brightness-110 transition"
+								className="text-primary hover:brightness-110 transition"
 							>
 								{link.label}
 							</motion.a>
-						))}
-					</div>
+						</div>
+					))}
 				</motion.div>
 			</Section>
 		</div>
