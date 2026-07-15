@@ -99,8 +99,8 @@ export default function BottomNav() {
 	}, []);
 
 	return (
-		<nav className="fixed bottom-4 left-0 right-0 z-50 flex justify-center">
-			<div className="flex items-center gap-4 rounded-full px-6 py-3 backdrop-blur-sm shadow-[0_-4px_20px_rgba(0,0,0,0.08)]">
+		<nav className="fixed bottom-4 left-0 right-0 z-50 flex  justify-center ">
+			<div className="flex items-center gap-4 rounded-full bg-background shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-6 py-2 ">
 				{NAV_ITEMS.map((item) => {
 					const Icon = item.icon;
 					const isActive = active === item.id;
@@ -110,7 +110,7 @@ export default function BottomNav() {
 							key={item.id}
 							href={`#${item.id}`}
 							aria-label={item.label}
-							className={`rounded-xl p-2.5 transition-colors ${
+							className={`rounded-xl p-2 transition-colors ${
 								isActive
 									? "bg-primary text-white"
 									: "text-foreground/40 hover:text-foreground"
