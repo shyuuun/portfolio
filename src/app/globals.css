@@ -1,10 +1,19 @@
 @import "tailwindcss";
 
-:root {
+[data-theme="light"] {
+	color-scheme: light;
 	--background: #faf5ed;
 	--foreground: #2d2d2d;
 	--primary: #db6618;
 	--primary-light: #f4b890;
+}
+
+[data-theme="dark"] {
+	color-scheme: dark;
+	--background: #1e1e1e;
+	--foreground: #e0d7cc;
+	--primary: #db6618;
+	--primary-light: #8b3a0a;
 }
 
 @theme inline {

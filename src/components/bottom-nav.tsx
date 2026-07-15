@@ -5,9 +5,13 @@ import {
 	BriefcaseBusiness,
 	FolderKanban,
 	Mail,
+	Moon,
+	Sun,
 	Terminal,
 	User,
 } from "lucide-react";
+import { motion } from "motion/react";
+import { useTheme } from "next-themes";
 
 const NAV_ITEMS = [
 	{ id: "about", icon: User, label: "About" },
@@ -16,6 +20,43 @@ const NAV_ITEMS = [
 	{ id: "experience", icon: BriefcaseBusiness, label: "Experience" },
 	{ id: "contact", icon: Mail, label: "Contact" },
 ];
+
+function ThemeToggle() {
+	const { theme, setTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) {
+		return <div className="h-5 w-5" />;
+	}
+
+	const isDark = theme === "dark";
+
+	return (
+		<motion.button
+			onClick={() => setTheme(isDark ? "light" : "dark")}
+			aria-label="Toggle theme"
+			className="rounded-xl p-2.5 text-foreground/40 hover:text-foreground transition-colors"
+			whileTap={{ scale: 0.8 }}
+		>
+			<motion.div
+				key={isDark ? "dark" : "light"}
+				initial={{ rotate: -90, scale: 0 }}
+				animate={{ rotate: 0, scale: 1 }}
+				transition={{ duration: 0.3, ease: "easeOut" }}
+			>
+				{isDark ? (
+					<Sun size={20} strokeWidth={2} />
+				) : (
+					<Moon size={20} strokeWidth={2} />
+				)}
+			</motion.div>
+		</motion.button>
+	);
+}
 
 export default function BottomNav() {
 	const [active, setActive] = useState("about");
@@ -38,7 +79,7 @@ export default function BottomNav() {
 				for (const entry of entries) {
 					if (entry.isIntersecting) {
 						setActive(entry.target.id);
-						console.log(`LOGGED: ${entry.target.id}`);
+						// console.log(`LOGGED: ${entry.target.id}`);
 					}
 				}
 			},
@@ -79,6 +120,7 @@ export default function BottomNav() {
 						</a>
 					);
 				})}
+				<ThemeToggle />
 			</div>
 		</nav>
 	);

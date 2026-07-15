@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Button from "../button";
 import Card from "../card";
 import Section from "../section";
@@ -15,18 +14,10 @@ export default function ProjectsSection({ id }: { id?: string }) {
 	return (
 		<Section id={id} sectionNumber={2} sectionTitle="Projects">
 			<div className="grid grid-cols-2 gap-4 mb-4">
-				<Card
-					src="/hoppura.jpg"
-					alt="Hoppura"
-					description="Cosplay social app"
-				/>
-				<Card
-					src="/lost_in_bytes.jpg"
-					alt="Hoppura"
-					description="Lost in Bytes"
-				/>
-				<Card src="/philgo.jpg" alt="Hoppura" description="Philgo" />
-				<Card src="/hoppura.jpg" alt="Hoppura" description="Rebling" />
+				<Card src="/hoppura.jpg" alt="Hoppura" />
+				<Card src="/lost_in_bytes.jpg" alt="Hoppura" />
+				<Card src="/philgo.jpg" alt="Hoppura" />
+				{/* <Card src="/hoppura.jpg" alt="Hoppura" /> */}
 			</div>
 			{!isExpanded && (
 				<div className="flex justify-center">
